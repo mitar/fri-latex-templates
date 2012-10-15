@@ -1,0 +1,631 @@
+%*****************************************************************
+%   Vzorec za pisanje diplomskega dela,
+%   ki vsebuje navodila za izdelavo diplomskega dela
+%
+%   UNIVERZA V LJUBLJANI
+%   Fakulteta za računalništvo in informatiko
+%
+%   Pripravila: Peter.Peer@fri.uni-lj.si
+%               Franc.Solina@fri.uni-lj.si
+%*****************************************************************
+
+\documentclass[12pt,a4paper,openany]{book}
+
+%Uporabljeni paketi
+\usepackage[utf8]{inputenc}
+\usepackage{cmap}
+\usepackage{type1ec}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{graphicx,epsfig}
+\usepackage[slovene]{babel}
+\usepackage{cite}
+
+\usepackage[pdftex,colorlinks,citecolor=black,filecolor=black,linkcolor=black,urlcolor=black,pagebackref]{hyperref}
+\usepackage{tikz}
+
+%Velikost strani - dvostransko
+\oddsidemargin 1.4cm
+\evensidemargin 0.35cm
+\textwidth 14cm
+\topmargin 0.26cm
+\headheight 0.6cm
+\headsep 1.5cm
+\textheight 20cm
+
+%Nastavitev glave in repa strani
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\chaptermark}[1]{\markboth{\textsf{Poglavje \thechapter:\ #1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\textsf{\thesection\  #1}}{}}
+\fancyhead[RE]{\leftmark}
+\fancyhead[LO]{\rightmark}
+\fancyhead[LE,RO]{\thepage}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}
+
+\newcommand{\gnuplot}{\textbf{gnuplot}}
+\newcommand{\pgfname}{\textsc{pgf}}
+\newcommand{\tikzname}{Ti\emph{k}Z}
+
+\input{cc}
+
+%********************************************
+
+\begin{document}
+
+% stran 1 med uvodnimi listi
+\thispagestyle{empty} 
+
+\begin{center}
+{\large 
+UNIVERZA V LJUBLJANI\\
+FAKULTETA ZA RAČUNALNIŠTVO IN INFORMATIKO\\
+}
+
+\vspace{3cm}
+{\LARGE Ime Priimek}\\
+
+\vspace{2cm}
+\textsc{\textbf{\LARGE 
+Navodila za izdelavo in vzorec za\\ 
+pisanje diplomskega dela\\ 
+}}
+
+\vspace{2cm}
+{ DIPLOMSKO DELO}\\
+{ NA UNIVERZITETNEM ŠTUDIJU\\
+}
+{ [NA INTERDISCIPLINARNEM UNIVERZITETNEM ŠTUDIJU]\\
+}
+{ [NA VISOKOŠOLSKEM STROKOVNEM ŠTUDIJU]\\
+}
+
+\vspace{2cm} 
+{\Large Mentor: prof. [doc.] dr. Ime Priimek}
+
+\vfill
+{\Large Ljubljana, 20??}
+\end{center}
+
+\newpage
+
+\ \thispagestyle{empty}
+
+\newpage
+
+%********************************************
+
+% stran 2 med uvodnimi listi
+\thispagestyle{empty}
+
+\vspace*{5cm}
+{\small \noindent
+To diplomsko delo je ponujeno pod licenco \textit{Creative Commons Priznanje avtorstva-Deljenje pod enakimi pogoji 2.5 Slovenija}
+ali (po želji) novejšo različico.
+To pomeni, da se tako besedilo, slike, grafi in druge sestavine dela kot tudi rezultati diplomskega dela lahko prosto distribuirajo,
+reproducirajo, uporabljajo, dajejo v najem, priobčujejo javnosti in predelujejo, pod pogojem, da se jasno in vidno navede avtorja in naslov tega
+dela in da se v primeru spremembe, preoblikovanja ali uporabe tega dela v svojem delu, lahko distribuira predelava le pod
+licenco, ki je enaka tej.
+Podrobnosti licence so dostopne na spletni strani \url{http://creativecommons.si/} ali na Inštitutu za
+intelektualno lastnino, Streliška 1, 1000 Ljubljana.
+
+\begin{center}% 0.66 / 0.89 = 0.741573033707865
+  \CcImageCc{0.741573033707865}\hspace*{1ex}\CcGroupBySa{1}{1ex}
+\end{center}
+}
+
+\vspace*{1.5cm}
+{\small \noindent
+Izvorna koda diplomskega dela, njenih rezultatov in v ta namen razvite programske opreme je ponujena pod GNU General Public License,
+različica 3 ali (po želji) novejšo različico. To pomeni, da se lahko prosto uporablja, distribuira in/ali predeluje pod njenimi pogoji.
+Podrobnosti licence so dostopne na spletni strani \url{http://www.gnu.org/licenses/}.
+}
+
+\begin{center} 
+\ \\ \vfill
+{\em
+Besedilo je oblikovano z urejevalnikom besedil \LaTeX. \\ Slike so izdelane s pomočjo jezika \pgfname/\tikzname. \\ Grafi so narisani
+s pomočjo programa \gnuplot.}
+\end{center}
+
+\newpage
+
+\ \thispagestyle{empty}
+
+\newpage
+
+%********************************************
+
+% stran 3 med uvodnimi listi
+\thispagestyle{empty}
+
+Namesto te strani {\bf vstavite} original izdane teme diplomskega dela s podpisom mentorja in dekana ter \v zigom fakultete, ki ga diplomant
+dvigne v študent\-skem referatu,  preden odda izdelek v vezavo!
+
+\newpage
+
+%********************************************
+
+% stran 4 med uvodnimi listi je prazna 
+\ \thispagestyle{empty}
+
+\newpage
+
+%********************************************
+
+% stran 5 med uvodnimi listi
+
+\thispagestyle{empty}
+
+\vspace{1cm}
+\begin{center} 
+{\Large \textbf{IZJAVA O AVTORSTVU}}
+\end{center}
+
+\begin{center} 
+{\Large diplomskega dela}
+\end{center}
+
+\vspace{1cm}
+Spodaj podpisani/-a \hspace{0.5cm} Ime Priimek,
+
+\vspace{0.5cm}
+z vpisno številko \hspace{0.5cm} xxxxxxx,
+
+\vspace{1cm}
+sem avtor/-ica diplomskega dela z naslovom:
+   
+\vspace{0.5cm}
+Naslov diplomskega dela
+
+\vspace{1.5cm}
+S svojim podpisom zagotavljam, da:
+\begin{itemize}
+	\item sem diplomsko delo izdelal/-a samostojno pod mentorstvom 
+	
+	prof. [doc.] dr. Ime Priimek
+	
+	in somentorstvom 
+	
+	prof. [doc.] dr. Ime Priimek
+	
+	\item	so elektronska oblika diplomskega dela, naslov (slov., angl.), povzetek (slov., angl.) ter ključne besede (slov., 			angl.) identični s tiskano obliko diplomskega dela
+	\item soglašam z javno objavo elektronske oblike diplomskega dela v zbirki ''Dela FRI''.
+\end{itemize}
+
+\vspace{1cm}
+V Ljubljani, dne xx.xx.20xx \hspace{1cm} Podpis avtorja/-ice:
+
+\newpage 
+
+%********************************************
+
+% stran 6 med uvodnimi listi je prazna pri dvostranskem tiskanju
+\ \thispagestyle{empty}
+
+\newpage
+
+%********************************************
+
+% stran 7 med uvodnimi listi
+
+\chapter*{Zahvala}
+
+\thispagestyle{empty}
+
+Na tem mestu se diplomant zahvali vsem, ki so kakorkoli pripomogli k uspešni izvedbi diplomskega dela.
+
+
+\newpage
+
+%********************************************
+
+% stran 8 med uvodnimi listi je prazna pri dvostranskem tiskanju
+\ \thispagestyle{empty}
+
+\newpage
+
+%********************************************
+
+% stran 9 med uvodnimi listi
+\thispagestyle{empty}
+
+$\;$ 
+
+\vspace{5cm}
+\hfill {\Large \em Morebitno posvetilo}
+\thispagestyle{empty}
+
+\newpage
+
+%********************************************
+
+% stran 10 med uvodnimi listi je prazna pri dvostranskem tiskanju
+
+\ \thispagestyle{empty}
+
+\newpage
+
+%********************************************
+
+\renewcommand\thepage{} 
+\tableofcontents 
+\renewcommand\thepage{\arabic{page}}
+
+\thispagestyle{empty}
+
+
+%********************************************
+
+\chapter*{Seznam uporabljenih kratic in simbolov}
+
+\thispagestyle{empty}
+
+Seznam uporabljenih kratic in simbolov, ki morajo biti enotni v celotnem delu, ne glede na označevanje v uporabljenih virih.
+
+%\cleardoublepage
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+%********************************************
+%zacno se glavni listi, ki so numerirani z arabskimi stevilkami
+
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\chapter*{Povzetek}
+
+\addcontentsline{toc}{chapter}{Povzetek}
+
+Povzetek naj posreduje bralcu kratko vsebino dela. Zajema naj namen dela, področje, na katerega se delo nanaša,
+uporabljene metode, poglavitne rezultate dela, zaključke in priporočila. 
+Povzetek naj ne obsega več kot eno stran, obi\v cajno ima le 200 do 300 besed. Napiše se povsem na koncu,
+ko je že jasna vsebina vseh ostalih poglavij.
+
+Ta dokument vsebuje navodilo za izdelavo diplomskega dela v obliki in strukturi, ki je v teh navodilih predpisan za
+pisanje diplomskih nalog. Struktura dokumenta je namenjena obojestranskemu tiskanju, kjer se novo poglavje vedno za\v cne na lihi strani.
+V dejanski diplomi poglavja in podpogla\-vja  obi\v cajno niso tako kratka kot v teh navodilih.
+
+Za oblikovanje tega dokumenta je bil uporabljen sistem \LaTeX.
+Ve\v c o \LaTeX-u lahko izve\v s na spletni strani \texttt{http://www.ctan.org/}.
+Kandidati, ki bodo svoje diplomsko delo oblikovali s pomo\v cjo
+\LaTeX-a, lahko izvorno kodo tega dokumenta neposredno uporabijo kot vzorec za pisanje svoje diplomske naloge.
+
+\vspace{1.3cm}
+\noindent
+{\large \bf Ključne besede:}
+
+\vspace{0.5cm}
+\noindent
+diploma, mentor, zagovor, podaljšanje, pisanje, struktura
+
+
+\chapter*{Abstract}
+
+\addcontentsline{toc}{chapter}{Abstract}
+
+Povzetek naj bo napisan v angleškem jeziku.
+
+\vspace{1.3cm}
+\noindent
+{\large \bf Key words:}
+
+\vspace{0.5cm}
+\noindent
+Ključne besede v angleškem jeziku.
+
+
+%********************************************
+
+\chapter{Splošno o diplomi}
+
+\section{Kaj je diplomski izpit}
+Diplomski izpit je končna oblika ocenjevanja usposobljenosti študenta univerzitetnega študijskega programa in visokošolskega
+strokovnega programa. Sestavljen je iz diplomske naloge in zagovora. Diplomsko delo mora biti vsebinsko zaokroženo samostojno delo, ki naj
+pokaže, da si je študent v času študija pridobil potrebno znanje s področja računalništva in informatike, da zna na metodološko pravilen način
+obravnavati teoretske in eksperimentalne probleme, da obvlada osnovne metode razvojnega in raziskovalnega dela in da lahko pri svojem delu
+samostojno uporablja literaturo. Diplomski izpit lahko opravlja študent, ki je opravil vse izpite in druge s programom univerzitetnega oziroma
+visokošolskega strokovnega študija predpisane obveznosti. 
+
+\section{Izstavitev teme} 
+Študent  zaprosi za izstavitev teme diplomske naloge s področja, ki ga sam izbere. Za  izbrano področje si mora poiskati ustreznega
+fakultetnega učitelja, ki je pripravljen prevzeti mentorstvo. Temo za diplomsko nalogo mu izda dekan na predlog mentorja. 
+
+\section{Izbira teme}
+Pri izbiri teme diplomskega dela je treba upoštevati aktualnost problema, materialne možnosti in potreben čas za izdelavo dela.
+Zahtevnost dela mora biti odmerjena tako, da ga študent lahko opravi v 10 tednih. Urejeno diplomsko delo izdela in odda študent najkasneje v 3
+mesecih od izstavitve teme. Podro\-bnosti o tem ureja pravilnik o preverjanju in ocenjevanju znanja ter izpitnem redu.
+
+\section{Rezultati diplome}
+Rezultati diplomskih del so intelektualna lastnina Fakultete za ra\-ču\-nal\-niš\-tvo in informatiko Univerze v Ljubljani. Za
+objavljanje ali izkoriščanje rezultatov diplomskega dela je potrebno pisno soglasje Fakultete za ra\-ču\-nal\-niš\-tvo in informatiko ter
+mentorja.
+
+
+
+\chapter{Prijava diplomskega dela}
+
+\section{Obrazec za prijavo} 
+Študent, ki je opravil vse izpite in druge, s študijskim programom predpisane obveznosti, se prijavi k diplomskemu delu s posebnim
+obrazcem. 
+
+\section{Kdo izdaja in sprejema obrazce} 
+Obrazce za prijavo diplomskega dela izdajajo in sprejemajo v študentskem referatu. 
+Tam je po potrebi na voljo tudi obrazec za predčasno oddajo diplom\-skega dela.
+
+\section{Roki za prijavo in oddajo} 
+Študent mora oddati prijavo diplomskega dela od 1. do 5. v mesecu, rok pa mu začne teči 15. v mesecu, 
+v katerem je oddal prijavo, oz. 5. v mesecu za mesec april.
+
+\section{Kdaj diplomskih del ni mogoče prijavljati} 
+Diplomskih del ni mogoče prijavljati v maju, juniju, juliju in avgustu.
+
+
+
+\chapter{Navodila za opravljanje diplomskega dela}
+
+\section{Viri}
+Za kakovostno diplomsko delo je pomembna uporaba vseh razpoložljivih doma\-čih in tujih strokovnih ter znanstvenih virov.
+
+\section{Predčasen zagovor diplomskega dela}
+Diplomant, ki je pri diplomskem delu posebno uspešen in ga zaključi pred rokom, lahko s pristankom mentorja zaprosi za 
+predčasen zagovor diplomskega dela. Prošnjo za predčasen zagovor podpišeta na posebnem obrazcu mentor in diplomant. Prošnje sprejema študentski
+referat FRI, predčasen zagovor pa odobri prodekan za pedagoško dejavnost.
+
+\section{Nesoglasja med kandidatom in mentorjem}
+Če pride med opravljanjem diplomskega dela do nesoglasja med kandidatom in mentorjem ali somentorjem, 
+kar onemogoči ustvarjalno sodelovanje, ima kandidat na podlagi sklepa Komisije za študijske zadeve pravico do zame\-nja\-ve mentorja ali
+somentorja. Zaradi istih razlogov in po enakem postopku lahko tudi mentor ali somentor odklonita mentorstvo oziroma somentorstvo. V takšnem
+primeru je potrebno z navedbo razlogov pisno zaprositi Komisijo za študijske zadeve, ki na podlagi sklepa odobri zamenjavo in določi novega
+mentorja ali somentorja. Kandidat ima pravico zamenjave mentorja uveljaviti le enkrat.
+
+
+
+\chapter{Navodila za pisanje}
+
+\section{Razgledanost}
+Pri pisanju diplomskega dela izkazuje kandidat poleg strokovne uspo\-sob\-lje\-nos\-ti še splošno razgledanost.
+
+\section{Jezik diplomskega dela}
+Diplomsko delo mora biti napisano v slovenskem jeziku in mora biti jezikovno neoporečno. 
+Priporočamo, da pisni izdelek pred oddajo pregleda lektor. Obsega naj najmanj 20 strani strokovnega besedila. Stro\-kov\-no besedilo ni
+li\-te\-rar\-ni tekst in zanj veljajo drugačna pravila. Stro\-kov\-na besedila morajo biti nedvoumna, zato naj bodo stavki kratki, preprosto
+razumljivi in naj vsebujejo čimmanj podredniških zvez. Ena in ista stvar naj bo vedno poimenovana z istim imenom. Samostalniški prilastki so v
+slovenščini na desni strani osebka ali predmeta (SQL query $\rightarrow$ poizvedba SQL, API interface $\rightarrow$ vmesnik API), zato naj
+velja posebna pozornost prevodom iz angleščine. S pisanjem strokovnih besedil se razvija tudi slovenska strokovna terminologija. Vsak avtor
+mora upo\-šte\-va\-ti že uveljavljene slovenske prevode strokovnega izrazja, pri novem stro\-kov\-nem izrazju, ki se pojavlja v tujih jezikih,
+še zlasti v angleščini, pa se mora potruditi za iskanje ustreznih slovenskih prevodov. 
+
+\section{Papir, pisave in vezava}
+Besedilo mora biti napisano na belem papirju formata A4.
+Okvirna postavitev besedila na omenjenem formatu je podana v tabeli \ref{tabela_mere}.
+
+\begin{table}[htb]
+\begin{center}
+\begin{tabular}{|l|l|}\hline
+zgornji rob	 & 20 mm (nad pagino vivo, če je ta uporabljena)\\\hline
+spodnji rob	 & 30 mm\\\hline
+notranji rob & 30 mm\\\hline
+zunanji rob	 & 20 mm\\\hline
+\end{tabular}
+\end{center}
+\caption[Okvirna postavitev besedila.]{Okvirna postavitev besedila na formatu papirja A4.}
+\label{tabela_mere}
+\end{table}
+
+Priporoča se pisava ``Times New Roman'' ali pisava ``Computer Modern'', obe velikosti 12. 
+Razmak med vrsticami naj bo običajen, tisk pa po možnosti obojestranski.
+
+Celoten izdelek naj bo vezan v platno ali drug ustrezen material. 
+Barva tega materiala naj bo črna ali temno modra. 
+Na hrbtu vezanega dela naj bo napisano ime in priimek kandidata in ``Diplomsko delo''.
+
+\section{Platnica diplomskega dela}
+Na platnici mora biti: 
+\begin{itemize}
+\item	naziv univerze in fakultete z velikimi črkami, oddaljen ca. 30 mm od zgornjega roba; 
+\item	ime in priimek kandidata in pod njim naslov dela;
+\item	oznaka, za katero vrsto diplomskega dela gre (univerzitetno ali visoko\-šol\-sko strokovno), napisana prav tako z velikimi črkami;
+\item	spodaj na sredini ``Ljubljana, letnica'', oddaljena ca. 30 mm od spodnjega roba. 
+\end{itemize}
+Diplomsko delo lahko razdelimo na uvodne liste in glavne liste.
+
+\section{Uvodni listi}
+Uvodni listi si sledijo po naslednjem vrstnem redu: 
+\begin{itemize}
+\item	
+naslovna stran je enaka platnici, le da ima še navedbo mentorja:
+naziv univerze in fakultete, ime in priimek diplomanta, 
+naslov teme diplom\-ske\-ga dela (enak kot v originalu izdane teme), oznaka za katero vrsto diplomskega dela gre, navedba mentorja ter kraj in
+letnica; 
+\item	original izdane teme diplomskega dela, ki ga diplomant dvigne v študent\-skem referatu, preden odda izdelek v vezavo;
+\item izpolnjena izjava o avtorstvu in soglasje, ki omogoča objavo elektronske oblike v zbirki 'Dela FRI'; 
+\item	zahvala, v kateri se diplomant zahvali vsem, ki so kakorkoli pripomogli k uspešni izvedbi diplomskega dela; 
+\item	morebitno posvetilo;
+\item	kazalo, ki obsega oštevilčene naslove poglavij in podpoglavij vključno s številkami strani. 
+Za oštevilčenje poglavij se uporablja večnivojsko desetiško številčenje (kot npr. v tem navodilu);
+\item	seznam uporabljenih kratic in simbolov, ki morajo biti enotni v celotnem delu, ne glede na označevanje v uporabljenih virih. 
+\item uvodne strani nimajo označb strani.
+\end{itemize}
+
+\section{Glavni listi}
+Od tu dalje so strani označene s številkami, ki naj bodo na zunanjem robu strani zgoraj. 
+Delo obsega naslednje dele: povzetek, uvod (1. poglavje), glavni del, ki je smiselno razdeljen na več poglavij (2., 3., \ldots\ poglavje),
+sklepne ugotovitve (zadnje poglavje), morebitne priloge, seznam slik in tabel, seznam uporabljenih virov (literatura). 
+
+\subsection{Povzetek}
+Povzetek naj posreduje bralcu kratko vsebino dela. Zajema naj namen dela, področje, na katerega se delo nanaša,
+uporabljene metode, poglavitne rezultate dela, zaključke in priporočila.  
+Povzetek naj ne obsega več kot eno stran. Napiše se povsem na koncu, ko je že jasna vsebina vseh ostalih poglavij.
+
+\subsection{Uvod}
+Uvod v diplomsko delo ima namen, da uvede bralca v tematiko dip\-lom\-ske\-ga dela. Za izhodišče pri pisanju uvoda služijo zahteve
+in cilji naloge, ki so navedeni v temi diplomske naloge, definirani s strani mentorja. Sledi podrobnejši opis problemskega področja, okolja v
+katerem so problemi pojavljajo, in identifikacija problemov, ki jih je potrebno razrešiti. Marsikateri problem in njegova rešitev je že opisan
+v literaturi, zato je potrebno pregledati vire in oceniti njihovo koristnost pri izdelavi naloge. Če že obstajajo kakšne podobne rešitve, je
+potrebno ugotoviti do kolikšne mere se dajo uporabiti, oziroma kakšne modifikacije bi bile potrebne za njihovo uporabo.
+Na koncu uvoda naj bo podan tudi kratek pregled vsebine posameznih poglavij.
+
+\subsection{Glavni del}
+V glavnem delu diplomskega dela opiše kandidat potek izdelave svojega dela, 
+pri čemer je predhodno seveda dokončal praktični del naloge.  V njem razloži, katere poti je ubral za dosego cilja, in sistematično opiše
+opravljeno delo.
+
+Kandidat oblikovno razdeli gradivo smiselno na poglavja, podpoglavja in morebiti še na razdelke, ki jih oštevilči 
+(na primer 4.6.3.). 
+
+Slik, ki skrajšujejo besedilo, ali pripomorejo k razumljivosti, naj bo čim več. Slike ali fotografije morajo biti
+oštevilčene in citirane v besedilu (npr. slika \ref{slika_seznam}) ter podnaslovljene tako, da je razvidno, kaj predstavljajo. V besedilo so
+vstavljene približno tam, kjer se nanje sklicujemo. Slike naj bodo pregledne in naj prikažejo le najpotrebnejšo informacijo. 
+
+\begin{figure}[htb]
+\centerline{\psfig{figure=image1,width=13cm}}
+\caption[Krožni dvosmerni seznam.]{Krožni dvosmerni seznam za n=15. Kazalec prvi služi kot vstopna to\v cka.}
+\label{slika_seznam}
+\end{figure}
+
+Formule in enačbe se oštevilči z zaporedno številko v oklepaju na desni strani formule, npr. enačba (\ref{enacba_r}), 
+in se tako nanje tudi sklicuje. Kadar za določen strokovni termin ni splošno sprejetega domačega izraza, se navede prvič, ko se slovenski izraz
+pojavi, v oklepaju tudi originalni izraz, povzet iz uporabljene literature.
+
+\begin{equation}
+r = \pi R_1 (r) \bowtie \pi R_2 (r) \bowtie \cdots \bowtie  \pi R_n  (r)
+\label{enacba_r}
+\end{equation}
+
+\subsection{Sklepne ugotovitve}
+
+Sklepne ugotovitve naj prikažejo oceno o opravljenem delu in povzamejo težave, na katere je naletel kandidat. Kot rezultat dela
+lahko navede ideje, ki so nastale med delom, in bi lahko bile predmet novih raziskav.
+
+\subsection{Priloge}
+Priloge (slike, diagrami, algoritmi, načrti), 
+če so potrebne, kandidat izdela kot posebna poglavja (dodatki), ki jih zaradi preglednosti ni smiselno vključiti v glavni del naloge. Vsi
+dodatki morajo biti naslovljeni in oštevilčeni, običajno z velikimi tiskanimi črkami. 
+
+Na tem mestu je priporočljivo navesti tudi seznama slik in tabel.
+
+\subsection{Viri}
+Vire navede kandidat po abecednem vrstnem redu priimkov avtorjev. Navajajo naj se le tisti viri, na katere se
+kandidat v besedilu sklicuje! Dolg seznam ni dokaz, da ima kandidat tudi tak pregled čez literaturo. Za navajanje virov naj se uporabi
+slovenska inačica formata IEEE. V tem formatu se viri (članek v zborniku konference,  knjiga, članek v reviji in spletna stran) navedejo  kot
+je to prikazano v poglavju Literatura (stran \pageref{stran_literatura}). Sklicevanje na vir se v besedilu naloge označi z zaporedno številko
+vira v oglatem oklepaju, npr. \cite{peytonjones93} oziroma \cite{trucco98,wadler89,IEEE}, kadar se na istem mestu sklicuje na več
+različnih virov.  Zglede za druge vrste virov je mogoče dobiti v revijah IEEE, ki so na voljo v knjižnici, ali na spletnem naslovu
+\cite{IEEE}.
+
+\subsection{Pisanje v tujem jeziku}
+Kandidatu se dovoli pisanje diplomskega dela v enem izmed svetovnih jezikov (npr. angleščini) na osnovi utemeljene prošnje. Naslovna stran
+(platnica) diplomskega dela je napisana v slovenskem jeziku. V naslednjem zaporedju si sledijo: prva stran diplomskega dela v tujem jeziku,
+prva stran diplomskega dela v slovenskem jeziku in original izdane teme diplomskega dela v tujem jeziku. Povzetek diplomskega dela v slovenskem
+jeziku mora obsegati 3 do 5 strani. 
+
+
+\chapter{Oddaja in zagovor diplomskega dela}
+
+\section{Roki za zagovor}
+Roke za oddajo in pogoje za zagovor diplomskega dela določata ``
+Pravilnik o preverjanju in ocenjevanju znanja ter izpitnem redu FRI''
+in ``Statut univerze''.
+
+\section{Podalj\v sanje roka}
+Ko je kandidatov mentor zadovoljen z dosežki kandidata in ko le-ta do\-kon\-ča diplomsko delo, sledi zagovor. Če ob izteku roka za izdelavo
+diplomskega dela mentor ni zadovoljen s kandidatovimi dosežki, mora kandidat zaprositi za podaljšanje roka oddaje in delo dopolniti glede na
+zahteve mentorja.
+
+V primeru, da kandidat tudi v podaljšanem roku ne odda diplomskega dela, roka ne more več podaljšati in mora zaprositi za izstavitev nove teme.
+
+\section{Kdaj tema zapade}
+Diplomantu, ki ne odda v roku diplomskega dela in ne zaprosi za njegovo podaljšanje, izda fakulteta ugotovitveni sklep, da je tema zapadla. Za
+izstavitev nove teme diplomskega dela mora kandidat s pisno vlogo zaprositi Komisijo za študijske zadeve.
+
+\section{\v Stevilo izvodov}
+Kandidat odda dva oz. tri enake vezane izvode diplomskega dela, enega v študentski referat, drugega mentorju oziroma tretjega somentorju, če je
+bil ta imenovan. Vezan izvod, ki ga študent odda v študentski referat, mora imeti dodan elektronski medij (CD), ki vsebuje:
+\begin{itemize}
+	\item celoten izvod diplomskega dela v elektronski obliki v formatu ....pdf (izvod ne sme biti na noben način zaščiten).
+	\item naslov (slov., angl.), povzetek diplomskega dela (slov., angl.) ter ključne besede (slov., angl.) oblikovane  z ustreznim urejevalnikom besedil in shranjene v formatu .doc ali .rtf. Podatki se uporabijo za vnos v digitalno zbirko ePrints, zato morajo biti napisani z malimi črkami v povezavi s potrebnimi velikimi začetnicami in kraticami, ki so zapisane z velikimi črkami. 
+\end{itemize}
+
+Študent odda v študentski referat tudi podpisan obrazec, ki vključuje izjavo o avtorstvu in soglasje, ki omogoča objavo elektronske oblike v zbirki 'Dela FRI'. Obrazec je na spletni strani FRI: \textit{Izjava o avtorstvu diplomskega dela.doc}. 
+
+
+\section{Komisija za zagovor diplomskega dela}
+Kandidat zagovarja svoje delo na diplomskem izpitu pred komisijo, ki jo se\-stav\-lja mentor in vsaj dva učitelja. Zagovor diplomskega dela je
+javen. Zagovor vodi predsednik komisije za oceno in zagovor diplomskega dela. 
+
+\subsection{Način zagovora}
+Predstavitev diplomskega dela je ustna, kandidat pa ne sme brati vna\-prej pripravljenega besedila. To mu je lahko samo v pomoč. Dovoljeno je
+pre\-brati številčene podatke in citate. Kandidat naj predstavitev diplomskega dela popestri z ilustrativnim prikazom dosežkov. Pri tem sme
+uporabiti vsa primerna sredstva, vključno z multimedijskimi. O obliki predstavitve se dogovori z mentorjem. Za zagotavljanje tehničnih
+pripomočkov se diplomant dogovori z mentorjem ali z referentom v štu\-dent\-skem referatu vsaj en dan pred zagovorom. Kadar ta sredstva niso
+zadostna oziroma primerna, jih diplomant lahko z mentorjevim soglasjem dopolni z laboratorijskimi ali lastnimi. V tem primeru jih mora takoj po
+zagovoru pospraviti, da se v diplomski sobi lahko začne nov zagovor. O času, v katerem je diplomska soba na razpolago diplomantu, se ta
+dogovori v študentskem referatu.
+
+\subsection{\v Cas za zagovor}
+Zagovor diplomskega dela začne kandidat s kratko, praviloma 10 minutno predstavitvijo svojega dela. Kandidat mora biti sposoben, da v razmeroma
+kratkem času poda članom komisije in drugim poslušalcem poglavitno vsebino svojega dela. Uvodoma naj razloži, kaj je predmet njegovega dela,
+katerih problemov se je lotil, kakšne so bile zahteve in kakšne vire je imel na voljo za njihovo rešitev. Sledi opis reševanja problemov v
+skladu s podanimi specifikacijami, npr. izdelava programske opreme, izdelava strojne opreme, razvoj algoritmov, metod ali metodologij itd. V
+zaključku kandidat kritično oceni rezultate svojega dela ter poda ideje in smernice za njegovo nadaljevanje.
+
+\subsection{Vpra\v sanja}
+Po ustni predstavitvi člani komisije postavijo kandidatu vprašanja. Kandidat odgovori na vprašanja iz celotne tematike diplomskega dela, iz
+usmerjenega znanja dodiplomskega študija, na katerega se opira diplomsko delo, in iz splošnega temeljnega znanja računalništva in informatike.
+Na vprašanja mora kandidat odgovoriti jasno, kratko in suvereno.
+
+\subsection{Ocena diplomskega dela in ocena zagovora}
+Po končanem zagovoru se komisija za oceno in zagovor diplomskega dela oddalji in oceni diplomsko delo in zagovor. Po vrnitvi v prostor zagovora
+predsednik komisije za oceno in zagovor ustno sporoči oceno diplomskega dela, oceno zagovora diplomskega dela in končno oceno diplomskega
+izpita. 
+
+\subsection{Pritožba}
+Če se diplomant ne strinja s katero od ocen (dela ali zagovora), se lahko pisno pritoži dekanu. Pritožbo mora oddati v dekanat fakultete v roku
+24 ur po zagovoru. 
+
+\newpage
+
+%********************************************
+
+\appendix
+
+%\addcontentsline{toc}{chapter}{\protect Dodatki}
+
+\chapter{Kaj so priloge ali dodatki}
+
+Priloge (slike, diagrami, algoritmi, načrti), 
+če so potrebne, kandidat izdela kot posebna poglavja (Dodatek A, Dodatek B, \ldots), ki jih zaradi preglednosti ni smiselno vključiti v glavni
+del naloge. Vsi dodatki morajo biti naslovljeni in oštevilčeni, običajno z velikimi tiskanimi črkami. 
+
+\newpage
+
+\addcontentsline{toc}{chapter}{Seznam slik}
+\addtocontents{toc}{\protect\vspace{-2ex}}
+\listoffigures
+
+\newpage
+
+\addcontentsline{toc}{chapter}{Seznam tabel}
+\listoftables
+
+%\listofalgorithms
+
+
+%********************************************
+
+\newpage
+
+\bibliographystyle{slplainurl}
+\addcontentsline{toc}{chapter}{Literatura}
+\label{stran_literatura}
+\bibliography{diploma} 
+
+
+\end{document}
+
+
+
+
